@@ -1,0 +1,27 @@
+<div class="container mt-20 flex justify-center gap-10">
+  @if (car$ | async) {
+  <app-car-details></app-car-details>
+  @if ((car$ | async)?.isAvailable) {
+  <app-reservation-form></app-reservation-form>
+  } @else {
+  <div class="text-center text-2xl font-bold">
+    The car is not available for rent
+  </div>
+  } } @else {
+  <div
+    class="flex flex-col items-center justify-center p-8 bg-white rounded-xl shadow-lg w-full max-w-md"
+  >
+    <mat-icon class="text-gray-400 text-6xl mb-4">directions_car</mat-icon>
+    <h2 class="text-2xl font-bold text-gray-800 mb-2">No Car Selected</h2>
+    <p class="text-gray-600 text-center mb-6">
+      Please select a car to proceed with your reservation
+    </p>
+    <button
+      routerLink="/rental-car"
+      class="px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 focus:outline-none cursor-pointer focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors"
+    >
+      Browse Available Cars
+    </button>
+  </div>
+  }
+</div>

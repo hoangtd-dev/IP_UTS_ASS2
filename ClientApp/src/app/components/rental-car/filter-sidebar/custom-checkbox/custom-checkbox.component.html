@@ -1,0 +1,10 @@
+<div class="flex items-center space-x-3 p-2">
+  <input
+    type="checkbox"
+    class="w-4 h-4 text-blue-600 rounded border-gray-300 cursor-pointer focus:ring-blue-500"
+    [checked]="value"
+    [disabled]="disabled"
+    (change)="onCheckboxChange($event)"
+  />
+  <label class="text-gray-700">{{ name }}</label>
+</div>
